@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Document Summaries</title>
+    <style>
+        table { width: 100%; border-collapse: collapse; }
+        th, td { border: 1px solid #ccc; padding: 10px; }
+        th { background-color: #f2f2f2; }
+    </style>
+</head>
+<body>
+
+<h2>Google Drive Document Summaries</h2>
+
+<table>
+    <tr>
+        <th>File Name</th>
+        <th>Summary</th>
+    </tr>
+    {% for r in results %}
+    <tr>
+        <td>{{ r.file_name }}</td>
+        <td>{{ r.summary }}</td>
+    </tr>
+    {% endfor %}
+</table>
+
+</body>
+</html>

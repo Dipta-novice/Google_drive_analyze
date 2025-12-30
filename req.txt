@@ -1,0 +1,14 @@
+google-api-python-client
+ google-auth-httplib2 
+google-auth-oauthlib
+pymupdf 
+python-docx
+ pdfplumber
+pandas
+ openpyxl
+ langchain
+ langchain_google_genai
+ dotenv
+ fastapi 
+ uvicorn
+  jinja2
