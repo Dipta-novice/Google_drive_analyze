@@ -1,26 +1,59 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Document Summaries</title>
+    <title>Drive Document Summaries</title>
     <style>
-        table { width: 100%; border-collapse: collapse; }
-        th, td { border: 1px solid #ccc; padding: 10px; }
-        th { background-color: #f2f2f2; }
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            vertical-align: top;
+        }
+        th {
+            background-color: #f4f4f4;
+        }
+        a {
+            color: #007bff;
+            text-decoration: none;
+        }
+        .download {
+            margin-bottom: 15px;
+        }
     </style>
 </head>
 <body>
 
 <h2>Google Drive Document Summaries</h2>
 
+<div class="download">
+    <a href="/download/csv">⬇ Download CSV Report</a>
+</div>
+
 <table>
     <tr>
         <th>File Name</th>
         <th>Summary</th>
+        <th>File Link</th>
     </tr>
-    {% for r in results %}
+
+    {% for item in results %}
     <tr>
-        <td>{{ r.file_name }}</td>
-        <td>{{ r.summary }}</td>
+        <td>{{ item.file_name }}</td>
+        <td>{{ item.summary }}</td>
+        <td>
+            {% if item.file_link %}
+                <a href="{{ item.file_link }}" target="_blank">Open</a>
+            {% else %}
+                N/A
+            {% endif %}
+        </td>
     </tr>
     {% endfor %}
 </table>
